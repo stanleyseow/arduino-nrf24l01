@@ -29,7 +29,7 @@
 
 #include <Arduino.h>
 
-#include "nRF24L01.h"
+#include "Mirf_nRF24L01.h"
 #include "MirfSpiDriver.h"
 
 // Nrf24l settings
