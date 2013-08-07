@@ -1,10 +1,14 @@
-An Arduino port of the tinkerer.eu library. It works with the Sparkfun nRF24L01+ modules.
+An Arduino port of the tinkerer.eu library. It works with most nRF24L01+ modules.
 
 http://www.arduino.cc/playground/InterfacingWithHardware/Nrf24L01
 
-This is a fork of the original "Mirf" library by Aaron Shrimpton:
-http://github.com/aaronds/arduino-nrf24l01/
 
+For this fork, I include :-
+* SPI85 libs for attinyXX support
+* attiny84 examples codes working with RF24
+
+
+From xdarklight/arduino-nrf24l01 forks :-
 This fork includes the following changes:
 * Added support for the SPI85 library on ATtiny85 chips.
 * Compatible with ATmega and ATtiny chips (tested with ATtiny85).
@@ -18,3 +22,8 @@ Other information:
   having to "hack" the libraries code. An example for changing
   the RF_SETUP register:
   "Mirf.configRegister(RF_SETUP, _BV(RF_DR_LOW));"
+
+
+
+Stanley
+stanleyseow@gmail.com
