@@ -18,7 +18,7 @@ Desc : Updates pin mapping based on arduino-tiny-cores
 https://code.google.com/p/arduino-tiny/
 
 Date : 11 Aug 2013
-Desc : Renamed SPI MOSI/MISO to USI-DO/ USI-DI to prevent confusion with SPI
+Desc : Renamed SPI MOSI/MISO to USI_DO/ USI_DI to prevent confusion with SPI
 
 Pls refer to page 61 of attiny84 datasheet
 
@@ -29,42 +29,42 @@ Pls refer to page 61 of attiny84 datasheet
 
 #if defined( __AVR_ATtiny85__ )
 const static uint8_t SS   = PB4;
-const static uint8_t USI-DO = PB1;
-const static uint8_t USI-DI = PB0;
+const static uint8_t USI_DO = PB1;
+const static uint8_t USI_DI = PB0;
 const static uint8_t SCK  = PB2;
 #endif
 
 // attiny84 tested working using Arduino Digital Pins below
 #if defined( __AVR_ATtiny84__ )
 const static uint8_t SS   = 3;
-const static uint8_t USI-DO = 5;
-const static uint8_t USI-DI = 4; 
+const static uint8_t USI_DO = 5;
+const static uint8_t USI_DI = 4; 
 const static uint8_t SCK  = 6;
 #endif
 
 SPI85Class SPI85;
 
 void SPI85Class::begin() {
-  // Set direction register for SCK and USI-DO pin.
-  // USI-DI pin automatically overrides to INPUT.
+  // Set direction register for SCK and USI_DO pin.
+  // USI_DI pin automatically overrides to INPUT.
   // When the SS pin is set as OUTPUT, it can be used as
   // a general purpose output port (it doesn't influence
   // SPI operations).
 
   pinMode(SCK, OUTPUT);
-  pinMode(USI-DO, OUTPUT);
-  pinMode(USI-DI,INPUT);
+  pinMode(USI_DO, OUTPUT);
+  pinMode(USI_DI,INPUT);
 
-  digitalWrite(USI-DI,HIGH);
+  digitalWrite(USI_DI,HIGH);
   digitalWrite(SCK, LOW);
-  digitalWrite(USI-DO, LOW);
+  digitalWrite(USI_DO, LOW);
 
 }
 
 void SPI85Class::end() {
   pinMode(SCK, INPUT);
-  pinMode(USI-DO, INPUT);
-  pinMode(USI-DI,INPUT);
+  pinMode(USI_DO, INPUT);
+  pinMode(USI_DI,INPUT);
 }
 
 
