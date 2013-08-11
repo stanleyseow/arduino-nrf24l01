@@ -2,9 +2,9 @@
 
 This is an attiny84 example code for the nRF24L01 that can communicate with RF24 library
 
-All the support files and libraries for the attiny85 for nRF24L01 is at repo listed  below
+All the support files and libraries for the attiny for nRF24L01 is at repo listed  below
 
- *  repo   : https://github.com/stanleyseow/attiny-nRF24L01
+ *  repo   : https://github.com/stanleyseow/arduino-nrf24l01/
  *  Author : Stanley Seow
  *  e-mail : stanleyseow@gmail.com
  *  date   : 8 Aug 2013
@@ -23,16 +23,20 @@ All the support files and libraries for the attiny85 for nRF24L01 is at repo lis
  https://code.google.com/p/arduino-tiny/
 
 */
+
 #include <SPI85.h>
 #include <Mirf.h>
 #include <MirfHardwareSpi85Driver.h>
 #include <TinyDebugSerial.h>
 TinyDebugSerial mySerial = TinyDebugSerial(); // PB0 on attiny84
 
-// This USI-SPI was defined in SPI85.h
-//#define MOSI  5
-//#define MISO  4
-//#define SCK   6
+// This USI was defined in SPI85.cpp
+// Not to be confused with SPI (MOSI/MISO) used by ICSP pins
+// Refer to page 61 of attiny84 datahseet
+//
+//#define USI-DO  5
+//#define USI-DI  4
+//#define USCK   6
 
 #define CE    7    
 #define CSN   3 
@@ -45,8 +49,8 @@ TinyDebugSerial mySerial = TinyDebugSerial(); // PB0 on attiny84
 //             (D  1)  PB1  3|    |12  PA1  (D  9) 
 //  RESET              PB3  4|    |11  PA2  (D  8) 
 //  PWM  INT0  (D  2)  PB2  5|    |10  PA3  (D  7)  CE
-//  SS/CSN     (D  3)  PA7  6|    |9   PA4  (D  6)  SCK
-//  MISO       (D  4)  PA6  7|    |8   PA5  (D  5)  MOSI
+//  SS/CSN     (D  3)  PA7  6|    |9   PA4  (D  6)  USCK
+//  USI-DI     (D  4)  PA6  7|    |8   PA5  (D  5)  USI-DO
 //                           +----+
 
 int bufferSize = 0;
@@ -160,4 +164,5 @@ void loop(){
     
     delay(1000);
 } // End loop()
+
 
