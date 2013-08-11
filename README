@@ -2,6 +2,9 @@ An Arduino port of the tinkerer.eu library. It works with most nRF24L01+ modules
 
 http://www.arduino.cc/playground/InterfacingWithHardware/Nrf24L01
 
+For the attiny, pls use the tiny cores below as they are many other tiny cores with 
+different mappings to Arduino Digital pins. 
+https://code.google.com/p/arduino-tiny/
 
 For this fork, I include :-
 * SPI85 libs for attinyXX support
