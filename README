@@ -6,7 +6,7 @@ http://www.arduino.cc/playground/InterfacingWithHardware/Nrf24L01
 For this fork, I include :-
 * SPI85 libs for attinyXX support
 * attiny84 examples codes working with RF24
-* Rename SPI pin names to USI-DI / USI-DO
+* Rename SPI pin names to USI_DI / USI_DO
 * To set radio MAX power, use this code below :-
   Mirf.configRegister( RF_SETUP, ( 1<<2 | 1<<1 ) );
 * If the RF24 receiver have dynamic payload enable, use this code :-
