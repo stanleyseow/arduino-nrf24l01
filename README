@@ -15,7 +15,10 @@ For this fork, I include :-
 * If the RF24 receiver have dynamic payload enable, use this code :-
   Mirf.configRegister( FEATURE, 1<<EN_DPL ); 
   Mirf.configRegister( DYNPD, 1<<DPL_P0 | 1<<DPL_P1 | 1<<DPL_P2 | 1<<DPL_P3 | 1<<DPL_P4 | 1<<DPL_P5 ); 
+* If attiny used as a receiver from RF24 libs/devices, the RF24 libs config, pls disable Dynamic Payload as
+  the Mirf does not "yet" support reading the dynamic payload size. Use static payload instead.
 * Blog entry on getting nRF24L01 working with attiny84 :-
+
 http://arduino-for-beginners.blogspot.com/2013/08/getting-nrf24l01-to-work-with-attiny84.html
 
 
