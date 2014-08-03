@@ -6,14 +6,22 @@
  *
  * Pins:
  * Hardware SPI:
- * MISO -> PB0
- * MOSI -> PB1
- * SCK -> PB2
+ * Attiny x5 Datasheet page 62
+ * USI-DI -> PB0 ( MISO )
+ * USI-DO -> PB1 ( MOSI )
+ * USI-SCL -> PB2 ( SCK )
  *
  * (Configurable):
  * CE -> PB4
  * CSN -> PB3
  */
+
+// ATtiny25/45/85 Pin map
+//                                 +-\/-+
+//                Reset/Ain0 (D 5) PB5  1|o   |8  Vcc
+//  nRF24L01 CE, Pin3 - Ain3 (D 3) PB3  2|    |7  PB2 (D 2) Ain1 - nRF24L01 SCK, pin5
+// nRF24L01 CSN, Pin4 - Ain2 (D 4) PB4  3|    |6  PB1 (D 1) pwm1 - nRF24L01 MOSI, pin7
+//                                 GND  4|    |5  PB0 (D 0) pwm0 - nRF24L01 MISO, pin6
 
 #include <SPI85.h>
 #include <Mirf.h>
