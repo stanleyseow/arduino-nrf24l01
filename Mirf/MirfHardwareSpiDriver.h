@@ -15,7 +15,7 @@ class MirfHardwareSpiDriver : public MirfSpiDriver {
 		void begin() {
 			SPI.begin();
 			SPI.setDataMode(SPI_MODE0);
-			SPI.setClockDivider(SPI_2XCLOCK_MASK);
+			SPI.setClockDivider(SPI_CLOCK_DIV2);
 		}
 
 		void end() {
